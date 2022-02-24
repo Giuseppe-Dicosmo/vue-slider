@@ -7,7 +7,7 @@ const appVue = new Vue(
 
       crItem: 'cr_item',
 
-      crActive: 'cr_active',
+      crActive: 'cr_item cr_active',
 
       cambiaImmagine: 2,
 
@@ -44,10 +44,17 @@ const appVue = new Vue(
 
     methods: {
       imgSu: function () {
-        this.crItem
+        this.cambiaImmagine--
+        if (this.cambiaImmagine === -1) {
+          this.cambiaImmagine = 4
+        }
       },
 
       imgGiu: function () {
+        this.cambiaImmagine++
+        if (this.cambiaImmagine === 5) {
+          this.cambiaImmagine = 0
+        }
       }
     }
   }
