@@ -45,16 +45,12 @@ const appVue = new Vue(
     methods: {
       imgSu: function () {
         this.cambiaImmagine--
-        if (this.cambiaImmagine === -1) {
-          this.cambiaImmagine = 4
-        }
+        const cambia = (this.cambiaImmagine === -1) ? this.cambiaImmagine = 4 : "";
       },
 
       imgGiu: function () {
         this.cambiaImmagine++
-        if (this.cambiaImmagine === 5) {
-          this.cambiaImmagine = 0
-        }
+        const cambia = (this.cambiaImmagine === 5) ? this.cambiaImmagine = 0 : "";
       }
     }
   }
