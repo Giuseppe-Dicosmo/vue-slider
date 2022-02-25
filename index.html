@@ -21,24 +21,28 @@
     <div class="row col-8">
       <div class="slide col-10 p-0">
 
-        <div v-bind:class="((item, index) === cambiaImmagine) ? crActive : crItem" v-for="(item, index) in itemss">
+        <div
+        v-bind:class="(index === cambiaImmagine) ? crActive : crItem"
+        v-for="(item, index) in itemss">
           <img :src="item.immagine" alt="">
         </div>
 
       </div>
 
       <div class="arrows col-2 p-0 position-relative">
+
         <span id="cr_arrows_top_a" @click="imgSu" v-bind:class="cr_top">
           <i class="fas fa-chevron-circle-up"></i>
         </span>
 
-        <div v-bind:class="itemg" v-for="item in itemss">
+        <div v-for="(item, index) in itemss" @click="click(index)" v-bind:class="itemg">
           <img :src="item.immagine" alt="">
         </div>
 
         <span id="cr_arrows_bottom_b" @click="imgGiu" v-bind:class="cr_bottom">
           <i class="fas fa-chevron-circle-down"></i>
         </span>
+
       </div>
     </div>
 

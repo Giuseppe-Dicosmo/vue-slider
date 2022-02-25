@@ -51,6 +51,10 @@ const appVue = new Vue(
       imgGiu: function () {
         this.cambiaImmagine++
         (this.cambiaImmagine === 5) ? this.cambiaImmagine = 0 : "";
+      },
+
+      click: function (index) {
+        this.cambiaImmagine = index
       }
     }
   }
